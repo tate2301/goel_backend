@@ -3,7 +3,7 @@ import config from "../constants";
 import SocketChangestream from "../pubsub/socket.changestream";
 import {Connection} from "mongoose";
 
-export default class DbConnection {
+export default class MongoConnection {
   public mongoose = mongoose;
   private socketStream: any;
 

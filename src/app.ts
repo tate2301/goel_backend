@@ -2,17 +2,17 @@ import express, {Application} from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import {Controller} from "./core/router.main";
-import DbConnection from "./database/mongo.connection";
+import MongoConnection from "./database/mongo.connection";
 
 
 class App {
   public app: Application;
   private controller: Controller;
-  private DbConnection: DbConnection;
+  private DbConnection: MongoConnection;
 
   constructor() {
     this.app = express();
-    this.DbConnection = new DbConnection();
+    this.DbConnection = new MongoConnection();
     this.setConfig();
     this.controller = new Controller(this.app);
   }
