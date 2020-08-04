@@ -17,10 +17,6 @@ class App {
     this.controller = new Controller(this.app);
   }
 
-  public routes() {
-    this.app.route('/').get();
-  }
-
   private setConfig() {
     //  Allows us to receive requests with data in json format
     this.app.use(bodyParser.json({ limit: '50mb' }));
