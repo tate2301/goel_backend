@@ -1,4 +1,4 @@
-import {IConfig} from "./classes/type";
+import {IConfig} from "./classes";
 
 const config: IConfig = {
   PORT: 80,

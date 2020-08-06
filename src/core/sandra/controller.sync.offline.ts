@@ -13,7 +13,7 @@ export class SyncTimeline {
           message: doc._id,
         });
       }
-    });
+    }).then(r => {});
 
   }
 }

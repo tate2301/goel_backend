@@ -1,6 +1,6 @@
 import ModelChangestream from "../models/model.changestream";
 import {Connection, Document} from "mongoose";
-import {Act} from "../classes/type";
+import {Act} from "../classes";
 import config from "../constants";
 import {mobileSyncNamespace} from "./controller.socket.io";
 
