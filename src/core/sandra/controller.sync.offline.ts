@@ -11,9 +11,8 @@ export class SyncTimeline {
       } else {
         res.status(200).json({
           message: doc._id,
-        });
+        }); 
       }
-    }).then(r => {});
-
+    })
   }
 }
