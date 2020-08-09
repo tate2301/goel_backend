@@ -1,4 +1,4 @@
-import {Token} from "./types";
+import {Token} from "../types";
 import ModelPerson from "../models/model.person";
 
 // TODO fetch lastBroadcastDate for User from DB then pass to token generator;

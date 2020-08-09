@@ -1,6 +1,6 @@
 import ModelChangestream from "../models/model.changestream";
 import {Connection, Document} from "mongoose";
-import {Act} from "../classes";
+import {Act} from "../types";
 import config from "../constants";
 import {mobileSyncNamespace} from "./controller.socket.io";
 
@@ -28,9 +28,17 @@ export default class SocketChangestream {
     const testCollection = this.db.collection("test");
     const testChangestream = testCollection.watch();
 
+    const usersCollection = this.db.collection("people");
+    const usersChangeStream = usersCollection.watch();
+
+
+    usersChangeStream.on('change', change=> {
+      this.commitChanges(change);
+    });
     testChangestream.on('change', change => {
       this.commitChanges(change);
     });
+
   }
 
   commitChanges(data: Object) {
