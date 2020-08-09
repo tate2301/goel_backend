@@ -2,7 +2,7 @@ import mongoose = require('mongoose');
 import {Schema} from "mongoose";
 
 const SchemaPerson = new Schema({
-    phone: {
+    phoneNumber: {
         type: String,
         required: true
     },
@@ -11,6 +11,15 @@ const SchemaPerson = new Schema({
         required: true
     },
     createdAt: {
+        type: Number,
+        required: true,
+        default: Date.now()
+    },
+    lastUpdatedTime: {
+        type: Number,
+        required: true
+    },
+    lastPing: {
         type: Number,
         required: true,
         default: Date.now()

@@ -15,5 +15,7 @@ export class Controller {
   public routes() {
     this.app.route('/').get(this.syncTimeline.welcomeMessage);
     this.app.route('/mobile/phoneUtils/tokens').get(this.phoneUtils.getTokens)
+    this.app.route('/mobile/phoneUtils/auth').post(this.phoneUtils.authenticate)
+    this.app.route('/mobile/phoneUtils/checkStatus').get(this.phoneUtils.getTokens)
   }
 }
