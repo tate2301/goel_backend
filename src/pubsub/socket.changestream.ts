@@ -3,12 +3,14 @@ import {Connection, Document} from "mongoose";
 import {Act} from "../types";
 import config from "../constants";
 import {mobileSyncNamespace} from "./controller.socket.io";
+import ModelEncounter from '../models/model.encounter'
 
 export default class SocketChangestream {
   private db: Connection;
 
   constructor(connection: Connection) {
     this.db = connection;
+    SocketChangestream.watchEncounters()
   }
 
   private static emmitCommitSuccess(doc: Document) {
@@ -21,6 +23,30 @@ export default class SocketChangestream {
     console.log({
       error: err,
       doc: JSON.stringify(doc),
+    })
+  } 
+
+  private static watchEncounters() {
+    mobileSyncNamespace().on("connect", (socket) => {
+      console.log(`[+] ${new Date().toISOString()} : ${socket.conn.id} has connected from IP Address ${socket.conn.remoteAddress} .`);
+
+      socket.on("encounter", data => {
+        let encounter = JSON.stringify(data)
+        encounter = encounter.replace(/\\/g, "")
+
+        const modelEncounter = new ModelEncounter({data: encounter})
+        modelEncounter.save((err, doc) => {
+          if (err) {
+            //SocketChangestream.emmitCommitError(err, doc);
+
+          } else {
+            //SocketChangestream.emmitCommitSuccess(doc);
+            console.log(`[+] ${new Date().toISOString()} : changestreams : encounters : ${doc}`)
+
+          }
+        })
+
+      })
     })
   }
 
@@ -57,4 +83,6 @@ export default class SocketChangestream {
       }
     })
   }
+
+
 }

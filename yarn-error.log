@@ -1,25 +1,30 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\weare\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+  /usr/bin/node /usr/bin/yarn add worker_threads
 
 PATH: 
-  D:\cutsoterio\backend\node_modules\.bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\weare\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\WebStorm 2020.1\bin;;C:\Users\weare\AppData\Roaming\npm;C:\Users\weare\AppData\Local\Programs\Microsoft VS Code\bin
+  /usr/share/swift/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
   1.22.4
 
 Node version: 
-  12.18.3
+  10.21.0
 
 Platform: 
-  win32 x64
+  linux x64
 
 Trace: 
-  SyntaxError: D:\cutsoterio\backend\package.json: Unexpected token } in JSON at position 697
-      at JSON.parse (<anonymous>)
-      at C:\Users\weare\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\weare\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
-      at C:\Users\weare\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+  Error: https://registry.yarnpkg.com/worker_threads: Not found
+      at Request.params.callback [as _callback] (/usr/lib/node_modules/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/lib/node_modules/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/lib/node_modules/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -48,7 +53,7 @@ npm manifest:
       "nanoid": "^3.1.12",
       "socket.io": "^2.3.0",
       "ts-worker-poll": "^1.0.5",
-      "typescript": "^3.9.7",
+      "typescript": "^3.9.7"
     },
     "devDependencies": {
       "@typescript-eslint/eslint-plugin": "^3.7.0",
@@ -224,13 +229,6 @@ Lockfile:
     version "7.0.4"
     resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.4.tgz#00a5749810b4ad80bff73a61f9cc9d0d521feb3c"
     integrity sha512-WGZCqBZZ0mXN2RxvLHL6/7RCu+OWs28jgQMP04LWfpyJlQUMTR6YU9CNJAKDgbw+EV/u687INXuLUc7FuML/4g==
-  
-  "@types/workerpool@^6.0.0":
-    version "6.0.0"
-    resolved "https://registry.yarnpkg.com/@types/workerpool/-/workerpool-6.0.0.tgz#068c31191f7df9b3d49ebe348b1eeb601e75e2d3"
-    integrity sha512-BjbKVHFBWblQ3vZ5yFq29kbM2TsaUaTOwYgVxqnNjMrT6CktVF8AvMxOJZgHGgNbAzP4z8DK+EshyZcYpdvAhQ==
-    dependencies:
-      "@types/node" "*"
   
   "@typescript-eslint/eslint-plugin@^3.7.0":
     version "3.7.0"
@@ -689,13 +687,6 @@ Lockfile:
       path-key "^3.1.0"
       shebang-command "^2.0.0"
       which "^2.0.1"
-  
-  crypto-random-string@^3.2.0:
-    version "3.2.0"
-    resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-3.2.0.tgz#d513ef0c2ac6ff7cad5769de585d9bf2ad5a2b4d"
-    integrity sha512-8vPu5bsKaq2uKRy3OL7h1Oo7RayAWB8sYexLKAqvCXVib8SxgbmoF1IN4QMKjBv8uI8mp5gPPMbiRah25GMrVQ==
-    dependencies:
-      type-fest "^0.8.1"
   
   crypto@^1.0.1:
     version "1.0.1"
@@ -2473,16 +2464,6 @@ Lockfile:
       surrial "^2.0.2"
       uuid "^8.0.0"
   
-  ts-worker-pool@^1.0.6:
-    version "1.0.6"
-    resolved "https://registry.yarnpkg.com/ts-worker-pool/-/ts-worker-pool-1.0.6.tgz#20c618527150ae2a24fd2abd285742e5913a7843"
-    integrity sha512-JTIx38SJlC7oki/Al7/QPndCj7ID9L/hvPLMokVf506eNBHKkPF+Wpa48M3K4DVgkAjK+mxAVoZHszCoTW7OgA==
-    dependencies:
-      "@types/node" "^13.13.4"
-      "@types/uuid" "^7.0.3"
-      surrial "^2.0.2"
-      uuid "^8.0.0"
-  
   tsconfig-paths@^3.9.0:
     version "3.9.0"
     resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.9.0.tgz#098547a6c4448807e8fcb8eae081064ee9a3c90b"
@@ -2605,11 +2586,6 @@ Lockfile:
     version "1.2.3"
     resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
     integrity sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
-  
-  workerpool@^6.0.0:
-    version "6.0.0"
-    resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.0.0.tgz#85aad67fa1a2c8ef9386a1b43539900f61d03d58"
-    integrity sha512-fU2OcNA/GVAJLLyKUoHkAgIhKb0JoCpSjLC/G2vYKxUjVmQwGbRVeoPJ1a8U4pnVofz4AQV5Y/NEw8oKqxEBtA==
   
   wrappy@1:
     version "1.0.2"

@@ -4,11 +4,6 @@ import {adminSyncNamespace, mobileSyncNamespace} from "./pubsub/controller.socke
 const os = require("os")
 const cluster = require("cluster")
 
-
-mobileSyncNamespace().on('connection', (socket) => {
-  console.log(`[+] ${new Date().toISOString()} : ${socket.conn.id} has connected from IP Address ${socket.conn.remoteAddress} .`);
-});
-
 adminSyncNamespace().on('connection', (socket) => {
   console.log(`[+] ${new Date().toISOString()} : ${socket.conn.id} has connected from IP Address ${socket.conn.remoteAddress} .`);
 });
