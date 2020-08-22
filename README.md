@@ -1,2 +1,2 @@
-# backend
-Soterio pandemic containment protocol backend server.
+# GOEL Backend Server
+GOEL dashboard server implementation using blueberry SDK
